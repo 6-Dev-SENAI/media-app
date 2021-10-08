@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Farro"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./mediaScreen.css" />
+    <title>Média App</title>
+  </head>
+  <body class="vh-100 bg-light">
+    <div
+      class="
+        container-fluid
+        black-piano
+        d-flex
+        align-items-center
+        justify-content-center
+        vh-header
+      "
+    >
+      <h2 class="w-100 text-center text-white p-0 m-0 display-2">Média App</h2>
+    </div>
+    <div class="container-fluid vw-100 vh-container vw100-responsive">
+      <div class="responsive-table">
+        <table
+          class="table table-responsive table-hover table-stripped vh-table"
+        >
+          <thead>
+            <th class="text-truncate nomeResponsivo">Nome</th>
+            <th class="text-truncate notaResponsivo">Nota 1</th>
+            <th class="text-truncate notaResponsivo">Nota 2</th>
+            <th class="text-truncate notaResponsivo">Nota 3</th>
+            <th class="text-truncate notaResponsivo">Nota 4</th>
+            <th class="w-6">Média</th>
+            <th class="w-9">Situação</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="align-middle">
+                <input
+                  class="form-control nomeResponsivo"
+                  id="nome1"
+                  onfocus="limparCss(this, 1)"
+                  onblur="validarNome(1)"
+                  placeholder="Nome Completo do Aluno"
+                  type="text"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota11"
+                  placeholder="1° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(1, 1)"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota12"
+                  placeholder="2° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(1, 2)"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota13"
+                  placeholder="3° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(1, 3)"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota14"
+                  placeholder="4° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(1, 4)"
+                />
+              </td>
+              <td class="align-middle w-6 text-truncate">
+                <p class="p-0 m-0" id="media1"></p>
+              </td>
+              <td class="align-middle" id="situacaoTd1">
+                <p class="p-0 m-0" id="situacao1"></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-middle">
+                <input
+                  class="form-control nomeResponsivo"
+                  id="nome2"
+                  onfocus="limparCss(this, 2)"
+                  onblur="validarNome(2)"
+                  placeholder="Nome Completo do Aluno"
+                  type="text"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota21"
+                  placeholder="1° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(2, 1)"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota22"
+                  placeholder="2° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(2, 2)"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota23"
+                  placeholder="3° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(2, 3)"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota24"
+                  placeholder="4° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(2, 4)"
+                />
+              </td>
+              <td class="align-middle w-6 text-truncate">
+                <p class="p-0 m-0" id="media2"></p>
+              </td>
+              <td class="align-middle" id="situacaoTd2">
+                <p class="p-0 m-0" id="situacao2"></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-middle">
+                <input
+                  class="form-control nomeResponsivo"
+                  id="nome3"
+                  onfocus="limparCss(this, 3)"
+                  onblur="validarNome(3)"
+                  placeholder="Nome Completo do Aluno"
+                  type="text"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota31"
+                  placeholder="1° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(3, 1)"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota32"
+                  placeholder="2° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(3, 2)"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota33"
+                  placeholder="3° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(3, 3)"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota34"
+                  placeholder="4° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(3, 4)"
+                />
+              </td>
+              <td class="align-middle w-6 text-truncate">
+                <p class="p-0 m-0" id="media3"></p>
+              </td>
+              <td class="align-middle" id="situacaoTd3">
+                <p class="p-0 m-0" id="situacao3"></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-middle">
+                <input
+                  class="form-control nomeResponsivo"
+                  id="nome4"
+                  onfocus="limparCss(this, 4)"
+                  onblur="validarNome(4)"
+                  placeholder="Nome Completo do Aluno"
+                  type="text"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota41"
+                  placeholder="1° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(4, 1)"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota42"
+                  placeholder="2° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(4, 2)"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota43"
+                  placeholder="3° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(4, 3)"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota44"
+                  placeholder="4° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(4, 4)"
+                />
+              </td>
+              <td class="align-middle w-6 text-truncate">
+                <p class="p-0 m-0" id="media4"></p>
+              </td>
+              <td class="align-middle" id="situacaoTd4">
+                <p class="p-0 m-0" id="situacao4"></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-middle">
+                <input
+                  class="form-control nomeResponsivo"
+                  id="nome5"
+                  onfocus="limparCss(this, 5)"
+                  onblur="validarNome(5)"
+                  placeholder="Nome Completo do Aluno"
+                  type="text"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota51"
+                  placeholder="1° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(5, 1)"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota52"
+                  placeholder="2° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(5, 2)"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota53"
+                  placeholder="3° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(5, 3)"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota54"
+                  placeholder="4° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(5, 4)"
+                />
+              </td>
+              <td class="align-middle w-6 text-truncate">
+                <p class="p-0 m-0" id="media5"></p>
+              </td>
+              <td class="align-middle" id="situacaoTd5">
+                <p class="p-0 m-0" id="situacao5"></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-middle">
+                <input
+                  class="form-control nomeResponsivo"
+                  id="nome6"
+                  onfocus="limparCss(this, 6)"
+                  onblur="validarNome(6)"
+                  placeholder="Nome Completo do Aluno"
+                  type="text"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota61"
+                  placeholder="1° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(6, 1)"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota62"
+                  placeholder="2° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(6, 2)"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota63"
+                  placeholder="3° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(6, 3)"
+                />
+              </td>
+              <td class="align-middle">
+                <input
+                  class="form-control notaResponsivo"
+                  id="nota64"
+                  placeholder="4° Bimestre"
+                  type="number"
+                  min="0"
+                  max="100"
+                  onblur="validarInput(6, 4)"
+                />
+              </td>
+              <td class="align-middle w-6 text-truncate">
+                <p class="p-0 m-0" id="media6"></p>
+              </td>
+              <td class="align-middle" id="situacaoTd6">
+                <p class="p-0 m-0" id="situacao6"></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="d-flex w-100 w100-responsive justify-content-between relatorio-div">
+        <div class="w-50 w50-responsive table-hidden-div">
+          <table
+            class="
+              table table-responsive table-hover table-stripped table-hidden
+            "
+          >
+            <thead class="sticky-top bg-light">
+              <tr>
+                <th>Nome</th>
+                <th>Média</th>
+              </tr>
+            </thead>
+            <tbody id="abaixoMedia">
+              <!-- adicionar com Js -->
+            </tbody>
+          </table>
+        </div>
+        <div class="w-25 w25-responsive d-flex flex-column justify-content-between">
+          <table class="table table-responsive">
+            <tbody>
+              <tr>
+                <td>Média Geral</td>
+                <td id="mediaGeral">
+                  <!-- adicionar com JS -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="d-grid gap-2">
+            <button
+              class="btn btn-outline-info"
+              type="button"
+              onclick="verificar()"
+            >
+              Verificar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="
+        container-fluid
+        black-piano
+        d-flex
+        align-items-center
+        justify-content-center
+        vh-footer
+      "
+    >
+      <h4 class="w-100 h4 text-center text-white p-0 m-0">Six-Dev &copy; 2021</h4>
+    </div>
+    <!-- bootstrap and script -->
+    <script src="./index.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js"
+      integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

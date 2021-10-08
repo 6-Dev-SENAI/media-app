@@ -1,0 +1,93 @@
+html,
+body,
+* {
+  box-sizing: border-box;
+  margin: 0em;
+  padding: 0em;
+}
+
+body {
+  font-family: "Farro";
+}
+
+p {
+  margin: 0em !important;
+}
+
+*:not(h2) {
+    font-size: 0.9rem !important;
+  }
+
+  h2 {
+    font-size: 1.7rem !important;
+  }
+
+.black-piano {
+  background-color: #23282b;
+}
+
+input.form-control {
+  border: none;
+  background-color: transparent;
+}
+
+input.form-control:focus {
+  color: #23282b;
+  background-color: transparent;
+  border-color: #23282b;
+  outline: 0;
+  box-shadow: 0 0 0 0.1rem rgb(0 0 0 / 25%);
+}
+
+.vh-table {
+  height: 45vh;
+}
+
+.relatorio-div {
+  height: calc(100vh - (9vh + 5vh) - 49vh);
+}
+
+@media (min-height: 798px) {
+  .relatorio-div {
+    height: calc(100vh - (9vh + 5vh) - 48vh);
+  }
+}
+
+.table-hidden-div {
+  overflow-y: auto;
+}
+
+.vh-header {
+  height: 9vh;
+}
+
+.vh-footer {
+  height: 5vh;
+}
+
+.vh-container {
+  height: calc(100vh - (9vh + 5vh));
+}
+
+.w-6 {
+  min-width: 6em;
+  max-width: 6em;
+}
+
+.w-9 {
+  min-width: 9em;
+  max-width: 9em;
+}
+
+*::-webkit-scrollbar {
+  width: 0.2em;
+  height: 0.2em;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+}
